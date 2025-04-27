@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style></style>
+  </head>
+  <body>
+    <div class="contain">
+      <h2 class="inc-exp-tra">Income & Expense Tracker</h2>
+      <div class="values">
+        <h4>Total Income : <span class="tot-income">0</span></h4>
+        <h4>Total Expense : <span class="tot-expense">0</span></h4>
+        <h4>Available Balance : <span class="avail-balance">0</span></h4>
+      </div>
+      <div class="get-entry">
+        <input type="text" class="description" placeholder="Description">       
+        <input type="number" class="amount" placeholder="Amount">
+    
+       <select class="what-type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+       </select>
+
+    <button onclick="addenty()">Add Entry</button>
+    <button onclick="resetall()">Reset</button>
+    </div>
+    <br>
+    <div class="filters">
+        <label><input type="radio" name="filter" value="all" checked onchange="renderentries()" /> All</label>
+        <label><input type="radio" name="filter" value="income" onchange="renderentries()" /> Income</label>
+        <label><input type="radio" name="filter" value="expense" onchange="renderentries()" /> Expense</label>
+      </div>
+  
+      <ul id="entryList"></ul>
+      
+
+      <script src="code.js"></script>
+
+    </div>
+  </body>
+</html>
