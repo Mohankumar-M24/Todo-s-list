@@ -3,41 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <title>Income and Enpense Tracker</title>
 
     <link rel="stylesheet" href="style.css">
+
     <style></style>
   </head>
-  <body>
-    <div class="contain">
-      <h2 class="inc-exp-tra">Income & Expense Tracker</h2>
-      <div class="values">
-        <h4>Total Income : <span class="tot-income">0</span></h4>
-        <h4>Total Expense : <span class="tot-expense">0</span></h4>
-        <h4>Available Balance : <span class="avail-balance">0</span></h4>
-      </div>
-      <div class="get-entry">
-        <input type="text" class="description" placeholder="Description">       
-        <input type="number" class="amount" placeholder="Amount">
-    
-       <select class="what-type">
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-       </select>
 
-    <button onclick="addenty()">Add Entry</button>
-    <button onclick="resetall()">Reset</button>
-    </div>
-    <br>
-    <div class="filters">
-        <label><input type="radio" name="filter" value="all" checked onchange="renderentries()" /> All</label>
-        <label><input type="radio" name="filter" value="income" onchange="renderentries()" /> Income</label>
-        <label><input type="radio" name="filter" value="expense" onchange="renderentries()" /> Expense</label>
+  <body>
+    <div class="container">
+
+      <h2>Income & Expense Tracker</h2>
+
+      <div class="summary">
+        <span>Total Income: <span id="totalIncome">0</span></span>
+        <span>Total Expense: <span id="totalExpense">0</span></span>
+        <span>Balance: ₹<span id="balance">0</span></span>
+      </div>
+  
+      <div class="entry-form">
+        <input type="text" id="description" placeholder="Description" />
+        <input type="number" id="amount" placeholder="Amount" />
+        <select id="type">
+          <option id="income" value="income">Income</option>
+          <option id="expense" value="expense">Expense</option>
+        </select>
+        <button id="addEntry" onclick="addEntry()">Add Entry</button>
+        <button id="Reset" onclick="resetFields()">Reset</button>
+      </div>
+  
+      <div class="filters">
+        <label><input type="radio" name="filter" value="all" checked onchange="renderEntries()" />All</label>
+        <label><input type="radio" name="filter" value="income" onchange="renderEntries()" />Income</label>
+        <label><input type="radio" name="filter" value="expense" onchange="renderEntries()" />Expense</label>
       </div>
   
       <ul id="entryList"></ul>
       
-
       <script src="code.js"></script>
 
     </div>
